@@ -4,7 +4,9 @@ let appData = {
             'inbox',
             'trash',
             'sent',
-             ],
+            ],
+    inProgressEmail: [
+        {to: "Sher", from: "Me", subject: "Hi", body: "this is an added draft email"}],
     contacts: [
             {name: 'Erin', lastMessage: "I wont be in class today"},
             {name: 'Matt', lastMessage: "Today, we are going to rock it!"}
@@ -16,7 +18,7 @@ let appData = {
             ],
     inbox: [
             {to: "Me", from: "personName", subject: "Hello", body: "body text"},
-            {to: "Me", from: "personName", subject: "Hello", body: "body text"},
+            {to: "Me", from: "personName", subject: "Hello", body: "stuff"},
             {to: "Me", from: "personName", subject: "Hello", body: "body text"}
              ],
     drafts: [
@@ -26,8 +28,7 @@ let appData = {
 
 
 }
-
-appData.drafts.newDraft = {to: "Sher", from: "Me", subject: "Hi", body: "this is an added draft email"}; //added email to drafts
+//appData.drafts.newDraft = {to: "Sher", from: "Me", subject: "Hi", body: "this is an added draft email"}; //added email to drafts, this probably replaces old drafts
 
 //marks email as sent
 appData.sent[0].status = "Marked Sent";
@@ -43,4 +44,8 @@ console.log("This is a list of emails (from the inbox): ",  appData.inbox); //Th
 console.log(" ");
 console.log('This is the text in the second email in the visible list: ', appData.inbox[1]); 
 console.log(appData.inbox[0].body); //prints the body text of the second email in the inbox
+
+appData.drafts.push(appData.inProgressEmail); //should push in progress email to drafts
 console.log(appData.drafts); // prints all emails in drafts
+
+
